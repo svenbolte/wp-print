@@ -90,6 +90,7 @@ if(function_exists('wp_print')) {
 
 ### 9.2.58.1
 * Added FPDF library and php code to output pdf files of posts and pages and a top20 newspaper 
+* url parameter for pdf output is: ?pdfoutput=1 (newspaper top 20) and ?pdfoutput=2 (current post or page as pdf)
 * changed print layout to 2 columns newspaper style
 * When custom logo is present, it will be on top of the print output page
 * Moved information about blog and page to the top of output

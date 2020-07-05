@@ -2,21 +2,25 @@ body {
 	font-family: Verdana, Arial, Tahoma;
 	font-size: 14px;
 	color: #000000;
+	max-width:1280px;
+	margin:0 auto;
 }
 * {
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
 }
-hr { display: none; }
-img { max-width: 100%; }
+hr, progress, input,textarea { display: none; }
+
+img { max-width: 100%; height:auto;	max-height:350px }
+
 p { 
 	word-wrap: break-word; 
 	margin-bottom: 15px;
 }
 a { color: inherit; }
 
-/*  Header */
+/*  Header  für wp-print custom version pb   */
 .entry-header {
 	margin-bottom: 25px;
 	padding-bottom: 25px;
@@ -41,6 +45,11 @@ a { color: inherit; }
 	padding: 0 2%;
 }
 
+article {
+	margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
 /* thumbnail */
 .thumbnail {
 	text-align: center;
@@ -53,6 +62,11 @@ a { color: inherit; }
 	line-height: 170%;
 }
 
+.penguin-post {
+    width: 100%;
+	column-width:600px;
+}
+
 pre {
     white-space: pre-wrap;
 }
@@ -61,15 +75,23 @@ pre {
 .footer {
 	margin-top: 25px;
 	padding: 25px 0 0 0;
-	border-top: 1px solid #555;
 }
 
 @media print {
-    #comments_controls,
+  * {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+  }
+	#comments_controls,
     #print-link {
         display: none;
-    }
+  }
+article {
+  column-width: 400px!important;
 }
+}
+
 .alignleft, .alignleft {
 	float: left;
 	margin: 10px 10px 5px 0;

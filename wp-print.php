@@ -1,33 +1,16 @@
 <?php
 /*
-Plugin Name: WP-Print
-Plugin URI: http://lesterchan.net/portfolio/programming/php/
-Description: Displays a printable version of your WordPress blog's post/page.
-Version: 2.58.1
-Author: Lester 'GaMerZ' Chan
-Author URI: http://lesterchan.net
-Text Domain: wp-print
+ * Plugin Name: WP-Print
+ * Plugin URI: https://lesterchan.net/portfolio/programming/php/
+ * Description: Show posts and pages in a newspaper Style Print View. A PDF downloadable file of a post may be created
+ * Version: 10.2.58.1
+ * Author: Lester 'GaMerZ' Chan und PBMod
+ * Author URI: https://lesterchan.net
+ * Text Domain: wp-print
+ * Tested up to: 5.4.2
+ * Requires at least: 4.0
+ * Requires PHP: 5.3
 */
-
-
-/*
-	Copyright 2019  Lester Chan  (email : lesterchan@gmail.com)
-
-	This program is free software; you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation; either version 2 of the License, or
-	(at your option) any later version.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-*/
-
 
 ### Create Text Domain For Translations
 add_action( 'plugins_loaded', 'print_textdomain' );
@@ -49,14 +32,12 @@ function wp_print_endpoint() {
 	add_rewrite_endpoint( 'print', EP_PERMALINK | EP_PAGES );
 }
 
-
 ### Function: Print Public Variables
 add_filter('query_vars', 'print_variables');
 function print_variables($public_query_vars) {
 	$public_query_vars[] = 'print';
 	return $public_query_vars;
 }
-
 
 ### Function: Display Print Link
 function print_link($print_post_text = '', $print_page_text = '', $echo = true) {
@@ -156,7 +137,6 @@ function print_donotprint_shortcode($atts, $content = null) {
 function print_donotprint_shortcode2($atts, $content = null) {
 	return;
 }
-
 
 ### Function: Print Content
 function print_content($display = true) {
@@ -397,6 +377,99 @@ function str_replace_one($search, $replace, $content){
 	} else {
 		return $content;
 	}
+}
+
+### Function PDF Output newest 10 Posts/Pages
+
+include(plugin_dir_path( __FILE__ ) . 'pdfhelper.php');
+$pdf = new PDF_HTML();
+
+if (isset($_GET['pdfout'])) {
+  $ppc = $_GET['pdfout'];
+  if ( $ppc=='1' ) {    output_pdf(); }
+}
+
+function catch_that_image($post) {
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  $first_img = $matches [1] [0];
+  if(empty($first_img)){ //Defines a default image
+    $first_img = '';
+  }
+  return $first_img;
+}
+
+function output_pdf() {
+	$excludecat = get_category_by_slug( 'softwareversionen' );
+    $laargs = array(
+    'posts_per_page'   => 20,
+    'orderby'          => 'date',
+    'order'            => 'DESC',
+    'category__not_in' => $excludecat 
+	);
+	$posts = get_posts( $laargs );
+
+    if( ! empty( $posts ) ) {
+		global $pdf;
+		$pdf->SetAutoPageBreak(true,30);
+        $title_line_height = 10;
+        $content_line_height = 8;
+        $pdf->AddPage();
+        foreach( $posts as $post ) {
+			if($pdf->GetY() > 220) { $pdf->AddPage(); }
+            $pdf->Ln(10);
+            $pdf->SetFont( 'Arial', '', 18 );
+            $pdf->Write($title_line_height, utf8_decode($post->post_title));
+            $pdf->SetFont( 'Arial', '', 10 );
+			// Datum und Kategorie
+            $pdf->Ln(8);
+            $categorie = get_categories();
+            $pdf->WriteHTML(' Kategorie: ' . $categorie[0]->cat_name);
+			date_default_timezone_set('Europe/Berlin');
+			$cdate = get_post_time( get_option( 'date_format' ), false, $post, true );
+			$mdate = get_post_modified_time( get_option( 'date_format' ), false, $post, true );
+            $pdf->WriteHTML(' erstellt ' . $cdate . ' aktualisiert ' . $mdate);
+			// Reading time
+			$content = get_post_field( 'post_content', $post );
+			$content = strip_tags( strip_shortcodes( $content ) );
+			$word_count = str_word_count( $content );
+			$reading_time = ceil( $word_count / 275 );
+			$s = ceil($word_count / 275 * 60);
+			$reading_time = " Lesezeit: ";
+			if ($s < 60) {
+				$reading_time .= sprintf('%02d', $s%60). " Sek";	
+			} else {
+				$reading_time .= sprintf('%02d:%02d', ($s/60%60), $s%60) . " Min";	
+			}			
+			$reading_time .= " (" . $word_count . " Wörter) ";
+            $pdf->WriteHTML(utf8_decode($reading_time));
+
+            // Image
+			if( !post_password_required($post) ) {
+				$imgatt = catch_that_image($post);
+				if( ! empty( $imgatt ) ) {
+					$pdf->Ln(8);
+					$pdf->Cell( 40, 40, $pdf->InlineImage($imgatt, $pdf->GetX(), $pdf->GetY(), 100), 0, 0, 'L', false );
+				}		
+			}	
+			
+            // Post Content
+			$content = '';
+			if(post_password_required($post)) {
+				$content = 'Inhalt nur für Abonnenten';
+			} else {
+				$content = $post->post_content;
+			}	
+            $pdf->Ln(8);
+            $pdf->SetFont( 'Arial', '', 11 );
+            $pdf->WriteHTML(utf8_decode($content));
+        }
+    }
+
+    $pdf->Output('I','wp-pdf-output.pdf');
+    exit;
 }
 
 

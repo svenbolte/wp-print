@@ -1,12 +1,15 @@
 # WP-Print
-Contributors: GamerZ PBMOD 
+Contributors: GamerZ, PBMod 
 Donate link: http://lesterchan.net/site/donation/  
-Tags: print, printer, wp-print  
+Tags: print, printer, wp-print, pdf-output, newspaper style  
 Requires at least: 4.0  
-Tested up to: 5.3  
-Stable tag: 2.58.1  
+Tested up to: 5.4.2  
+Stable tag: 9.2.58.1  
 
-Displays a printable version of your WordPress blog's post/page.
+Displays a printable version of your WordPress blog's post/page and creates pdf files of posts and pages or pdf of last 20 posts in newspaper style
+
+## Why this fork?
+needed some german language translations integrated and a slim ability to output as pdf for offline readers and a newspaper style
 
 ## Description
 
@@ -27,6 +30,8 @@ Once installed take the following steps to set it up:
 * Default: print_link('', '')
 * Alternatively, you can set the text in 'WP-Admin -> Settings -> Print'.
 * If you DO NOT want the print link to appear in every post/page, DO NOT use the code above. Just type in <strong>[print_link]</strong> into the selected post/page content and it will embed the print link into that post/page only.
+* You may also add /print to the URL to see the print-friendly version
+* Alternately add url parameters: ?print=1 for print and &pdfoutput=1 for last 20 posts newspaper or pdfoutput=2 for current post as pdf
 
 ### Build Status
 [![Build Status](https://travis-ci.org/lesterchan/wp-print.svg?branch=master)](https://travis-ci.org/lesterchan/wp-print)
@@ -35,13 +40,15 @@ Once installed take the following steps to set it up:
 [https://github.com/lesterchan/wp-print](https://github.com/lesterchan/wp-print "https://github.com/lesterchan/wp-print")
 
 ### Translations
+a german (formal) translation is included. Other languages:
+
 [http://dev.wp-plugins.org/browser/wp-print/i18n/](http://dev.wp-plugins.org/browser/wp-print/i18n/ "http://dev.wp-plugins.org/browser/wp-print/i18n/")
 
 ### Credits
 * Plugin icon by [SimpleIcon](http://www.simpleicon.com) from [Flaticon](http://www.flaticon.com)
 * Icons courtesy of [FamFamFam](http://www.famfamfam.com/)
 
-### Donations
+### Donations (for the founder of this project)
 I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks as my school allowance, I will really appreciate it. If not feel free to use it without any obligations.
 
 ## Screenshots
@@ -80,6 +87,16 @@ if(function_exists('wp_print')) {
 * This will allow you to upgrade WP-Print without worrying about overwriting your printing styles or templates that you have created.
 
 ## Changelog
+
+### 9.2.58.1
+* Added FPDF library and php code to output pdf files of posts and pages and a top20 newspaper 
+* url parameter for pdf output is: ?pdfoutput=1 (newspaper top 20) and ?pdfoutput=2 (current post or page as pdf)
+* changed print layout to 2 columns newspaper style
+* When custom logo is present, it will be on top of the print output page
+* Moved information about blog and page to the top of output
+* removed some elements from the print output and pdf output (shortcodes and form controls stuff)
+* tested with 5.4.2
+
 ### 2.58.1
 * FIXED: Strip iframe tags as well.
 

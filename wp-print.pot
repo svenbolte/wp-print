@@ -1,261 +1,255 @@
-# Translation of Plugins - WP-Print - Stable (latest release) in German
-# This file is distributed under the same license as the Plugins - WP-Print - Stable (latest release) package.
+#, fuzzy
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-07-20 13:04+0000\n"
+"Project-Id-Version: WP-Print\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-20 13:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Loco https://localise.biz/\n"
-"Language: de_DE_formal\n"
-"Project-Id-Version: Plugins - WP-Print - Stable (latest release)\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-20 13:03+0000\n"
-"Last-Translator: \n"
-"Language-Team: Deutsch (Sie)\n"
 "X-Loco-Version: 2.4.0; wp-5.4.2"
 
 #: print-comments.php:22
 #, php-format
 msgid "%s @ %s"
-msgstr "%s @ %s"
+msgstr ""
 
 #: wp-print.php:292
 #, php-format
 msgid "%s Comment"
 msgid_plural "%s Comments"
-msgstr[0] "%s Kommentar"
-msgstr[1] "%s Kommentare"
+msgstr[0] ""
+msgstr[1] ""
 
 #: wp-print.php:223
 msgid ","
-msgstr ","
+msgstr ""
 
 #: print-comments.php:22
 msgid "By"
-msgstr "von"
+msgstr ""
 
 #: print-posts.php:80
 msgid "Click here to print."
-msgstr "Hier klicken um zu drucken."
+msgstr ""
 
 #: print-comments.php:17
 msgid "Close"
-msgstr "Schließen"
+msgstr ""
 
 #: print-comments.php:22
 msgid "Comment"
-msgstr "Kommentar"
+msgstr ""
 
 #: wp-print.php:295
 msgid "Comments Disabled"
-msgstr "Kommentare sind deaktiviert"
+msgstr ""
 
 #: wp-print.php:298
 msgid "Comments Hidden"
-msgstr "Kommentare sind ausgeblendet."
+msgstr ""
 
 #: print-options.php:61 wp-print.php:492
 #, php-format
 msgid "Copyright &copy; %s %s. All rights reserved."
-msgstr "Copyright &copy; %s %s. Alle Rechte vorbehalten. "
+msgstr ""
 
 #: print-options.php:124
 msgid "Custom"
-msgstr "Benutzerdefiniert"
+msgstr ""
 
 #: print-options.php:186
 msgid "Disclaimer/Copyright Text?"
-msgstr "Disclaimer/Copyright Text?"
+msgstr ""
 
 #: print-options.php:128 print-options.php:191
 msgid "HTML is allowed."
-msgstr "HTML ist erlaubt."
+msgstr ""
 
 #. Author URI of the plugin
 msgid "https://lesterchan.net"
-msgstr "https://lesterchan.net"
+msgstr ""
 
 #. URI of the plugin
 msgid "https://lesterchan.net/portfolio/programming/php/"
-msgstr "https://lesterchan.net/portfolio/programming/php/"
+msgstr ""
 
 #: wp-print.php:203 wp-print.php:268
 msgid "Image"
-msgstr "Bild"
+msgstr ""
 
 #. Author of the plugin
 msgid "Lester 'GaMerZ' Chan und PBMod"
-msgstr "https://lesterchan.net/portfolio/programming/php/"
+msgstr ""
 
 #: print-options.php:144 print-options.php:153 print-options.php:162
 #: print-options.php:171 print-options.php:180
 msgid "No"
-msgstr "Nein"
+msgstr ""
 
 #: wp-print.php:290
 msgid "No Comments"
-msgstr "Keine Kommentare"
+msgstr ""
 
 #: print-posts.php:161
 msgid "No posts matched your criteria."
-msgstr "Keine passenden Beiträge gefunden. "
+msgstr ""
 
 #: print-options.php:37
 msgid "No Print Option Updated"
-msgstr "Es wurden keine Druckeinstellungen geändert. "
+msgstr ""
 
 #: wp-print.php:124
 msgid ""
 "Note: There is a print link embedded within this post, please visit this "
 "post to print it."
 msgstr ""
-"Beachte: In diesem Beitrag ist ein Drucken-Link verfügbar. Bitte öffne den "
-"Beitrag um ihn zu drucken."
 
 #: print-comments.php:22 print-posts.php:98
 msgid "On"
-msgstr "am"
+msgstr ""
 
 #: print-comments.php:17
 msgid "Open"
-msgstr "Öffnen"
+msgstr ""
 
 #: print-comments.php:22
 msgid "Pingback"
-msgstr "Pingback"
+msgstr ""
 
 #: print-posts.php:96
 msgid "Posted By"
-msgstr "geschrieben von"
+msgstr ""
 
 #: wp-print.php:25 wp-print.php:341
 msgid "Print"
-msgstr "Drucken"
+msgstr ""
 
 #: print-options.php:140
 msgid "Print Comments?"
-msgstr "Kommentare ausdrucken?"
+msgstr ""
 
 #: print-options.php:89
 msgid "Print Icon"
-msgstr "Druck Icon"
+msgstr ""
 
 #: print-options.php:122
 msgid "Print Icon Only"
-msgstr "Nur Druck-Icon"
+msgstr ""
 
 #: print-options.php:121
 msgid "Print Icon With Text Link"
-msgstr "Druck-Icon mit Text-Link"
+msgstr ""
 
 #: print-options.php:158
 msgid "Print Images?"
-msgstr "Bilder ausdrucken?"
+msgstr ""
 
 #: print-options.php:149
 msgid "Print Links?"
-msgstr "Links ausdrucken?"
+msgstr ""
 
 #: print-options.php:27 print-options.php:73 print-options.php:137
 msgid "Print Options"
-msgstr "Druckeinstellungen"
+msgstr ""
 
 #: print-options.php:74
 msgid "Print Styles"
-msgstr "Druckstile"
+msgstr ""
 
 #: print-options.php:83
 msgid "Print Text Link For Page"
-msgstr "Drucken-Text-Link für Seiten"
+msgstr ""
 
 #: print-options.php:77
 msgid "Print Text Link For Post"
-msgstr "Drucken-Text-Link für Beiträge"
+msgstr ""
 
 #: print-options.php:130
 msgid "Print text link of the post/page that you have typed in above."
 msgstr ""
-"Drucken-Text-Link des/r Beitrags/Seite, die du darüber eingegeben hast. "
 
 #: print-options.php:123
 msgid "Print Text Link Only"
-msgstr "nur Drucken-Text"
+msgstr ""
 
 #: print-options.php:118
 msgid "Print Text Link Style"
-msgstr "Drucken-Text-Link Stil"
+msgstr ""
 
 #: wp-print.php:483
 msgid "Print This Page"
-msgstr "Drucke diese Seite"
+msgstr ""
 
 #: wp-print.php:482
 msgid "Print This Post"
-msgstr "Drucke diesen Beitrag"
+msgstr ""
 
 #: print-options.php:167
 msgid "Print Thumbnail?"
-msgstr "Miniaturbild drucken?"
+msgstr ""
 
 #: print-options.php:176
 msgid "Print Videos?"
-msgstr "Videos ausdrucken?"
+msgstr ""
 
 #: print-options.php:132 print-options.php:188
 msgid "Restore Default Template"
-msgstr "Standardeinstellungen wiederherstellen"
+msgstr ""
 
 #: print-options.php:196
 msgid "Save Changes"
-msgstr "Änderungen speichern"
+msgstr ""
 
 #. Description of the plugin
 msgid ""
 "Show posts and pages in a newspaper Style Print View. A PDF downloadable "
 "file of a post may be created"
 msgstr ""
-"Beiträge und Seiten in einer Zeitungsansicht anzeigen. Eine PDF-Datei zum "
-"Herunterladen eines Beitrags kann erstellt werden"
 
 #: print-comments.php:19
 msgid "To"
-msgstr "Empfänger"
+msgstr ""
 
 #: print-comments.php:22
 msgid "Trackback"
-msgstr "Trackback"
+msgstr ""
 
 #: print-options.php:32
 msgid "Updated"
-msgstr "aktualisiert"
+msgstr ""
 
 #: print-posts.php:142
 msgid "URL to article"
-msgstr "URL zum Beitrag"
+msgstr ""
 
 #: print-options.php:131
 msgid "URL to the print icon you have chosen above."
-msgstr "URL des Druck-Icons, das du oben ausgewählt hast."
+msgstr ""
 
 #: print-options.php:129
 msgid "URL to the printable post/page."
-msgstr "URL der/des druckfähigen Seite/Beitrags"
+msgstr ""
 
 #: wp-print.php:309
 msgid "URLs in this post:"
-msgstr "URLs in diesem Beitrag:"
+msgstr ""
 
 #. Name of the plugin
 msgid "WP-Print"
-msgstr "WP-Print"
+msgstr ""
 
 #: print-options.php:143 print-options.php:152 print-options.php:161
 #: print-options.php:170 print-options.php:179
 msgid "Yes"
-msgstr "Ja"
+msgstr ""
 
 #: print-comments.php:26
 msgid "Your comment is awaiting moderation."
-msgstr "Dein Kommentar wartet auf Freischaltung."
+msgstr ""

@@ -73,14 +73,14 @@
 		<div style="text-align: center;font-size:1.3em"><?php  echo bloginfo( 'name' ); ?>
 		</div>
 		<p style="text-align: center">
-		<?php echo bloginfo( 'url' ) ?>
-		&nbsp; 
+		<?php echo bloginfo( 'url' ) ?>	&nbsp; 
 		<?php echo bloginfo( 'description' ) .' &nbsp; ' . stripslashes($print_options['disclaimer']);  ?><br>
 		<span id="print-link">
-			<a href="#Print" onclick="window.print(); return false;" title="<?php _e('Click here to print.', 'wp-print'); ?>">
-				Drucken</a> &nbsp; 
-			<a href="<?php get_site_url(); ?>?pdfout=1" title="Offline PDF-Zeitung">PDF-Offline-Zeitung</a> &nbsp; 
-			<a href="<?php get_home_url(); ?>?print=1&pdfout=2" title="Ansicht als PDF herunterladen">diese Posts als PDF</a> 
+			<?php
+			echo '<a href="#Print" onclick="window.print();return false;" title="' . __('Click here to print.', 'wp-print') . '">Drucken</a> &nbsp; ';
+			echo '<a href="'.add_query_arg( array('pdfout'=>1), $wp->request ).'" title="Offline PDF-Zeitung">PDF-Offline-Zeitung</a> &nbsp; ';
+			echo '<a href="'.add_query_arg( array('pdfout'=>2,'print'=>1), $wp->request ).'" title="Ansicht als PDF herunterladen">diese Posts als PDF</a> ';
+			?>
 		</span>
 		</p>
 		</header>

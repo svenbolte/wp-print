@@ -3,7 +3,7 @@
  * Plugin Name: WP-Print
  * Plugin URI: https://lesterchan.net/portfolio/programming/php/
  * Description: Show posts and pages in a newspaper Style Print View. A PDF downloadable file of a post may be created
- * Version: 10.2.58.1
+ * Version: 11.2.58.1
  * Author: Lester 'GaMerZ' Chan und PBMod
  * Author URI: https://lesterchan.net
  * Text Domain: wp-print

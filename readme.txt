@@ -1,14 +1,16 @@
-# WP-Print
-Contributors: GamerZ PBMOD 
+=== WP-Print ===
+Contributors: GamerZ, PBMod 
 Donate link: http://lesterchan.net/site/donation/  
 Tags: print, printer, wp-print  
-Requires at least: 4.0  
-Tested up to: 5.3  
-Stable tag: 2.58.1  
+Version: 9.2.58.1.6
+Stable tag: 9.2.58.1.6
+Requires at least: 5.1
+Tested up to: 5.5.1
+Requires PHP: 7.2
 
 Displays a printable version of your WordPress blog's post/page.
 
-## Description
+== Description ==
 
 Once installed take the following steps to set it up:
 
@@ -16,7 +18,7 @@ Once installed take the following steps to set it up:
 1. You Need To Re-Generate The Permalink (WP-Admin -> Settings -> Permalinks -> Save Changes)
 1. Refer To Usage For Further Instructions
 
-### Usage
+== Usage ==
 
 1. Open `wp-content/themes/<YOUR THEME NAME>/index.php`. You should place it in single.php, post.php, page.php, etc also if they exist.
 1. Find: `<?php while (have_posts()) : the_post(); ?>`
@@ -28,31 +30,21 @@ Once installed take the following steps to set it up:
 * Alternatively, you can set the text in 'WP-Admin -> Settings -> Print'.
 * If you DO NOT want the print link to appear in every post/page, DO NOT use the code above. Just type in <strong>[print_link]</strong> into the selected post/page content and it will embed the print link into that post/page only.
 
-### Build Status
-[![Build Status](https://travis-ci.org/lesterchan/wp-print.svg?branch=master)](https://travis-ci.org/lesterchan/wp-print)
 
-### Development
-[https://github.com/lesterchan/wp-print](https://github.com/lesterchan/wp-print "https://github.com/lesterchan/wp-print")
-
-### Translations
-[http://dev.wp-plugins.org/browser/wp-print/i18n/](http://dev.wp-plugins.org/browser/wp-print/i18n/ "http://dev.wp-plugins.org/browser/wp-print/i18n/")
-
-### Credits
+== Credits ==
 * Plugin icon by [SimpleIcon](http://www.simpleicon.com) from [Flaticon](http://www.flaticon.com)
 * Icons courtesy of [FamFamFam](http://www.famfamfam.com/)
 
-### Donations
-I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks as my school allowance, I will really appreciate it. If not feel free to use it without any obligations.
 
-## Screenshots
+== Screenshots ==
 
 1. Admin Print Options
 2. Print Post Link
 3. Print Page
 
-## Frequently Asked Questions
+== Frequently Asked Questions ==
 
-### How do I add this to my theme?
+== How do I add this to my theme? ==
 
 1. Open `wp-content/themes/<YOUR THEME NAME>/index.php`
       You may place it in single.php, post.php, page.php, etc also.
@@ -79,7 +71,20 @@ if(function_exists('wp_print')) {
 * If it doesn't exists, it will just load the respective default file that comes with WP-Print.
 * This will allow you to upgrade WP-Print without worrying about overwriting your printing styles or templates that you have created.
 
-## Changelog
+== Changelog ==
+
+### 9.2.58.1.6
+* variable declarations and php 7.4.9 adjusts
+
+### 9.2.58.1
+* Added FPDF library and php code to output pdf files of posts and pages and a top20 newspaper 
+* url parameter for pdf output is: ?pdfoutput=1 (newspaper top 20) and ?pdfoutput=2 (current post or page as pdf)
+* changed print layout to 2 columns newspaper style
+* When custom logo is present, it will be on top of the print output page
+* Moved information about blog and page to the top of output
+* removed some elements from the print output and pdf output (shortcodes and form controls stuff)
+* tested with 5.4.2
+
 ### 2.58.1
 * FIXED: Strip iframe tags as well.
 

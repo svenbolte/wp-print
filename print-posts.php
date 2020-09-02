@@ -12,6 +12,8 @@
  * - wp-content/plugins/wp-print/print-posts.php
  */
 
+global $wp, $post
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

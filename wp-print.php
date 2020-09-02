@@ -1,15 +1,16 @@
 <?php
 /*
- * Plugin Name: WP-Print
- * Plugin URI: https://lesterchan.net/portfolio/programming/php/
- * Description: Show posts and pages in a newspaper Style Print View. A PDF downloadable file of a post may be created
- * Version: 9.2.58.1.5
- * Author: Lester 'GaMerZ' Chan und PBMod
- * Author URI: https://lesterchan.net
- * Text Domain: wp-print
- * Tested up to: 5.5
- * Requires at least: 4.5
- * Requires PHP: 5.5
+Plugin Name: WP-Print
+Plugin URI: https://lesterchan.net/portfolio/programming/php/
+Description: Show posts and pages in a newspaper Style Print View. A PDF downloadable file of a post may be created
+Author: Lester 'GaMerZ' Chan und PBMod
+Author URI: https://lesterchan.net
+Text Domain: wp-print
+Version: 9.2.58.1.6
+Stable tag: 9.2.58.1.6
+Requires at least: 5.1
+Tested up to: 5.5.1
+Requires PHP: 7.2
 */
 
 ### Create Text Domain For Translations

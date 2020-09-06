@@ -6,8 +6,8 @@ Description: Show posts and pages in a newspaper Style Print View. A PDF downloa
 Author: Lester 'GaMerZ' Chan und PBMod
 Author URI: https://lesterchan.net
 Text Domain: wp-print
-Version: 9.2.58.1.6
-Stable tag: 9.2.58.1.6
+Version: 9.2.58.1.7
+Stable tag: 9.2.58.1.7
 Requires at least: 5.1
 Tested up to: 5.5.1
 Requires PHP: 7.2
@@ -395,10 +395,7 @@ function catch_that_image($post) {
   ob_start();
   ob_end_clean();
   $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-  $first_img = $matches [1] [0];
-  if(empty($first_img)){ //Defines a default image
-    $first_img = '';
-  }
+  if(empty($first_img)){ $first_img = ''; } else { $first_img = $matches [1] [0]; }
   return $first_img;
 }
 

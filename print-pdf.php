@@ -15,6 +15,7 @@
 output_pdf2();
 
 function output_pdf2() {
+	global $post;
 	if (have_posts()):
 		global $pdf;
 		$pdf->SetAutoPageBreak(true,30);
@@ -56,8 +57,7 @@ function output_pdf2() {
 				ob_start();
 				ob_end_clean();
 				$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i',  get_the_content() , $matches);
-				$first_img = $matches [1] [0];
-				// if(empty($first_img)){ $first_img = ''; }
+				if(empty($first_img)){ $first_img = ''; } else { $first_img = $matches [1] [0]; }
 				if( !empty( $first_img ) ) {
 					$pdf->Ln(8);
 					$pdf->Cell( 40, 40, $pdf->InlineImage($first_img, $pdf->GetX(), $pdf->GetY(), 100), 0, 0, 'L', false );

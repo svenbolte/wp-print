@@ -2,8 +2,8 @@
 Contributors: GamerZ, PBMod 
 Donate link: http://lesterchan.net/site/donation/  
 Tags: print, printer, wp-print  
-Version: 9.2.58.1.6
-Stable tag: 9.2.58.1.6
+Version: 9.2.58.1.7
+Stable tag: 9.2.58.1.7
 Requires at least: 5.1
 Tested up to: 5.5.1
 Requires PHP: 7.2
@@ -73,7 +73,7 @@ if(function_exists('wp_print')) {
 
 == Changelog ==
 
-### 9.2.58.1.6
+### 9.2.58.1.6 and 9.2.58.1.7
 * variable declarations and php 7.4.9 adjusts
 
 ### 9.2.58.1

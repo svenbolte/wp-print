@@ -71,7 +71,8 @@ $print_options = get_option( 'print_options' );
 <div class="wrap">
     <?php screen_icon(); ?>
     <h2><?php _e('Print Options', 'wp-print'); ?></h2>
-    <h3><?php _e('Print Styles', 'wp-print'); ?></h3>
+    <div class="postbox">
+	<h3><?php _e('Print Styles', 'wp-print'); ?></h3>
     <table class="form-table">
         <tr>
             <th scope="row" valign="top"><?php _e('Print Text Link For Post', 'wp-print'); ?></th>
@@ -192,8 +193,10 @@ $print_options = get_option( 'print_options' );
             </td>
         </tr>
     </table>
+
+	</div>
     <p class="submit">
-        <input type="submit" name="Submit" class="button" value="<?php _e('Save Changes', 'wp-print'); ?>" />
+        <input type="submit" name="Submit" class="button-primary" value="<?php _e('Save Changes', 'wp-print'); ?>" />
     </p>
 </div>
 </form>

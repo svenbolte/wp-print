@@ -80,8 +80,8 @@ global $wp, $post
 		<span id="print-link">
 			<?php
 			echo '<a href="#Print" onclick="window.print();return false;" title="' . __('Click here to print.', 'wp-print') . '">Drucken</a> &nbsp; ';
-			echo '<a href="'.add_query_arg( array('pdfout'=>1), $wp->request ).'" title="Offline PDF-Zeitung">PDF-Offline-Zeitung</a> &nbsp; ';
-			echo '<a href="'.add_query_arg( array('pdfout'=>2,'print'=>1), $wp->request ).'" title="Ansicht als PDF herunterladen">diese Posts als PDF</a> ';
+			echo '<a href="'.add_query_arg( array('pdfout'=>1), home_url($wp->request) ).'" title="Offline PDF-Zeitung">PDF-Offline-Zeitung</a> &nbsp; ';
+			echo '<a href="'.add_query_arg( array('pdfout'=>2,'print'=>1), home_url($wp->request) ).'" title="Ansicht als PDF herunterladen">diese Posts als PDF</a> ';
 			?>
 		</span>
 		</p>

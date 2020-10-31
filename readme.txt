@@ -1,11 +1,10 @@
 === WP-Print ===
 Contributors: GamerZ, PBMod 
-Donate link: http://lesterchan.net/site/donation/  
 Tags: print, printer, wp-print  
-Version: 9.2.58.1.7
-Stable tag: 9.2.58.1.7
+Version: 9.2.58.1.8
+Stable tag: 9.2.58.1.8
 Requires at least: 5.1
-Tested up to: 5.5.1
+Tested up to: 5.5.3
 Requires PHP: 7.2
 
 Displays a printable version of your WordPress blog's post/page.

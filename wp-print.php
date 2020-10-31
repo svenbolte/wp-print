@@ -6,10 +6,10 @@ Description: Show posts and pages in a newspaper Style Print View. A PDF downloa
 Author: Lester 'GaMerZ' Chan und PBMod
 Author URI: https://lesterchan.net
 Text Domain: wp-print
-Version: 9.2.58.1.7
-Stable tag: 9.2.58.1.7
+Version: 9.2.58.1.8
+Stable tag: 9.2.58.1.8
 Requires at least: 5.1
-Tested up to: 5.5.1
+Tested up to: 5.5.3
 Requires PHP: 7.2
 */
 

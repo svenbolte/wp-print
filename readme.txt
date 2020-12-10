@@ -4,8 +4,8 @@ Tags: print, printer, wp-print
 Version: 9.2.58.1.8
 Stable tag: 9.2.58.1.8
 Requires at least: 5.1
-Tested up to: 5.5.3
-Requires PHP: 7.2
+Tested up to: 5.6
+Requires PHP: 7.4
 
 Displays a printable version of your WordPress blog's post/page.
 

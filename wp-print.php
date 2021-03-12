@@ -9,7 +9,7 @@ Text Domain: wp-print
 Version: 9.2.58.1.8
 Stable tag: 9.2.58.1.8
 Requires at least: 5.1
-Tested up to: 5.6
+Tested up to: 5.7
 Requires PHP: 7.4
 */
 

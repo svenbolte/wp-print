@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP-Print\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-20 13:03+0000\n"
+"POT-Creation-Date: 2021-03-25 20:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -20,14 +20,14 @@ msgstr ""
 msgid "%s @ %s"
 msgstr ""
 
-#: wp-print.php:292
+#: wp-print.php:203
 #, php-format
 msgid "%s Comment"
 msgid_plural "%s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: wp-print.php:223
+#: wp-print.php:134
 msgid ","
 msgstr ""
 
@@ -35,7 +35,7 @@ msgstr ""
 msgid "By"
 msgstr ""
 
-#: print-posts.php:80
+#: print-posts.php:82
 msgid "Click here to print."
 msgstr ""
 
@@ -47,40 +47,36 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
-#: wp-print.php:295
+#: wp-print.php:206
 msgid "Comments Disabled"
 msgstr ""
 
-#: wp-print.php:298
+#: wp-print.php:209
 msgid "Comments Hidden"
 msgstr ""
 
-#: print-options.php:61 wp-print.php:492
+#: wp-print.php:388
 #, php-format
 msgid "Copyright &copy; %s %s. All rights reserved."
 msgstr ""
 
-#: print-options.php:124
-msgid "Custom"
-msgstr ""
-
-#: print-options.php:186
+#: print-options.php:93
 msgid "Disclaimer/Copyright Text?"
 msgstr ""
 
-#: print-options.php:128 print-options.php:191
+#: print-options.php:96
 msgid "HTML is allowed."
 msgstr ""
 
 #. Author URI of the plugin
-msgid "https://lesterchan.net"
+msgid "https://github.com/svenbolte/"
 msgstr ""
 
 #. URI of the plugin
-msgid "https://lesterchan.net/portfolio/programming/php/"
+msgid "https://github.com/svenbolte/wp-print"
 msgstr ""
 
-#: wp-print.php:203 wp-print.php:268
+#: wp-print.php:114 wp-print.php:179
 msgid "Image"
 msgstr ""
 
@@ -88,30 +84,24 @@ msgstr ""
 msgid "Lester 'GaMerZ' Chan und PBMod"
 msgstr ""
 
-#: print-options.php:144 print-options.php:153 print-options.php:162
-#: print-options.php:171 print-options.php:180
+#: print-options.php:51 print-options.php:60 print-options.php:69
+#: print-options.php:78 print-options.php:87
 msgid "No"
 msgstr ""
 
-#: wp-print.php:290
+#: wp-print.php:201
 msgid "No Comments"
 msgstr ""
 
-#: print-posts.php:161
+#: print-posts.php:163
 msgid "No posts matched your criteria."
 msgstr ""
 
-#: print-options.php:37
+#: print-options.php:34
 msgid "No Print Option Updated"
 msgstr ""
 
-#: wp-print.php:124
-msgid ""
-"Note: There is a print link embedded within this post, please visit this "
-"post to print it."
-msgstr ""
-
-#: print-comments.php:22 print-posts.php:98
+#: print-comments.php:22 print-posts.php:100
 msgid "On"
 msgstr ""
 
@@ -123,87 +113,47 @@ msgstr ""
 msgid "Pingback"
 msgstr ""
 
-#: print-posts.php:96
+#: print-posts.php:98
 msgid "Posted By"
 msgstr ""
 
-#: wp-print.php:25 wp-print.php:341
+#: wp-print.php:26 wp-print.php:250
 msgid "Print"
 msgstr ""
 
-#: print-options.php:140
+#: print-options.php:47
 msgid "Print Comments?"
 msgstr ""
 
-#: print-options.php:89
-msgid "Print Icon"
-msgstr ""
-
-#: print-options.php:122
-msgid "Print Icon Only"
-msgstr ""
-
-#: print-options.php:121
-msgid "Print Icon With Text Link"
-msgstr ""
-
-#: print-options.php:158
+#: print-options.php:65
 msgid "Print Images?"
 msgstr ""
 
-#: print-options.php:149
+#: print-options.php:56
 msgid "Print Links?"
 msgstr ""
 
-#: print-options.php:27 print-options.php:73 print-options.php:137
+#: print-options.php:24 print-options.php:43
 msgid "Print Options"
 msgstr ""
 
-#: print-options.php:74
-msgid "Print Styles"
-msgstr ""
-
-#: print-options.php:83
-msgid "Print Text Link For Page"
-msgstr ""
-
-#: print-options.php:77
-msgid "Print Text Link For Post"
-msgstr ""
-
-#: print-options.php:130
-msgid "Print text link of the post/page that you have typed in above."
-msgstr ""
-
-#: print-options.php:123
-msgid "Print Text Link Only"
-msgstr ""
-
-#: print-options.php:118
-msgid "Print Text Link Style"
-msgstr ""
-
-#: wp-print.php:483
+#: wp-print.php:382
 msgid "Print This Page"
 msgstr ""
 
-#: wp-print.php:482
+#: wp-print.php:381
 msgid "Print This Post"
 msgstr ""
 
-#: print-options.php:167
+#: print-options.php:74
 msgid "Print Thumbnail?"
 msgstr ""
 
-#: print-options.php:176
+#: print-options.php:83
 msgid "Print Videos?"
 msgstr ""
 
-#: print-options.php:132 print-options.php:188
-msgid "Restore Default Template"
-msgstr ""
-
-#: print-options.php:196
+#: print-options.php:103
 msgid "Save Changes"
 msgstr ""
 
@@ -221,23 +171,15 @@ msgstr ""
 msgid "Trackback"
 msgstr ""
 
-#: print-options.php:32
+#: print-options.php:29
 msgid "Updated"
 msgstr ""
 
-#: print-posts.php:142
+#: print-posts.php:144
 msgid "URL to article"
 msgstr ""
 
-#: print-options.php:131
-msgid "URL to the print icon you have chosen above."
-msgstr ""
-
-#: print-options.php:129
-msgid "URL to the printable post/page."
-msgstr ""
-
-#: wp-print.php:309
+#: wp-print.php:220
 msgid "URLs in this post:"
 msgstr ""
 
@@ -245,8 +187,8 @@ msgstr ""
 msgid "WP-Print"
 msgstr ""
 
-#: print-options.php:143 print-options.php:152 print-options.php:161
-#: print-options.php:170 print-options.php:179
+#: print-options.php:50 print-options.php:59 print-options.php:68
+#: print-options.php:77 print-options.php:86
 msgid "Yes"
 msgstr ""
 

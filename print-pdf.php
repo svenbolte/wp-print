@@ -1,13 +1,7 @@
 <?php
 /*
  * WordPress Plugin: WP-Print
- * Copyright (c) 2012 Lester "GaMerZ" Chan MOD PB 2020
  *
- * File Written By:
- * - Lester "GaMerZ" Chan
- * - http://lesterchan.net
- *
- * File Information:
  * - Printer Friendly Post/Page Template for PDF Output
  * - wp-content/plugins/wp-print/print-pdf.php
  */
@@ -30,12 +24,12 @@ function output_pdf2() {
             $pdf->SetFont( 'Arial', '', 10 );
 			// Datum und Kategorie
             $pdf->Ln(8);
-            $categorie = get_categories();
-            $pdf->WriteHTML(' Kategorie: ' . $categorie[0]->cat_name);
+            $categorie = get_the_category(); 
+            if (is_array($categorie)) $pdf->WriteHTML('Kategorie: ' . $categorie[0]->cat_name);
 			date_default_timezone_set('Europe/Berlin');
 			$cdate = get_post_time( get_option( 'date_format' ), false, $post, true );
 			$mdate = get_post_modified_time( get_option( 'date_format' ), false, $post, true );
-            $pdf->WriteHTML(' erstellt ' . $cdate . ' aktualisiert ' . $mdate);
+            $pdf->WriteHTML(' erstellt ' . utf8_decode($cdate) . ' aktualisiert ' . utf8_decode($mdate) );
 			// Reading time
 			$content = get_post_field( 'post_content', $post );
 			$content = strip_tags( strip_shortcodes( $content ) );

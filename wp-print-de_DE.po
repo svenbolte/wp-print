@@ -8,13 +8,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Loco https://localise.biz/\n"
-"Language: de_DE_formal\n"
+"Language: de_DE\n"
 "Project-Id-Version: Plugins - WP-Print - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-20 13:03+0000\n"
 "Last-Translator: \n"
-"Language-Team: Deutsch (Sie)\n"
-"X-Loco-Version: 2.4.0; wp-5.4.2"
+"Language-Team: Deutsch\n"
+"X-Loco-Version: 2.5.2; wp-5.7"
 
 #: print-comments.php:22
 #, php-format

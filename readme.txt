@@ -1,61 +1,28 @@
 === WP-Print ===
 Contributors: GamerZ, PBMod 
-Tags: print, printer, wp-print  
-Version: 9.2.58.1.8
-Stable tag: 9.2.58.1.8
+Tags: print, printer, wp-print, pdfoutput, pdf-newspaper  
+Version: 9.2.58.1.9
+Stable tag: 9.2.58.1.9
 Requires at least: 5.1
 Tested up to: 5.7
 Requires PHP: 7.4
 
-Displays a printable version of your WordPress blog's post/page.
+Displays a printable version of your WordPress blogs post/page or creates pdf of it or a pdf newpaper of current 20 posts.
 
 == Description ==
 
 Once installed take the following steps to set it up:
 
 1. WP-Print settings page is located in WP-Admin -> Settings -> Print
-1. You Need To Re-Generate The Permalink (WP-Admin -> Settings -> Permalinks -> Save Changes)
-1. Refer To Usage For Further Instructions
+2. You Need To Re-Generate The Permalink (WP-Admin -> Settings -> Permalinks -> Save Changes)
 
 == Usage ==
 
-1. Open `wp-content/themes/<YOUR THEME NAME>/index.php`. You should place it in single.php, post.php, page.php, etc also if they exist.
-1. Find: `<?php while (have_posts()) : the_post(); ?>`
-1. Add Anywhere Below It: `<?php if(function_exists('wp_print')) { print_link(); } ?>`
-
-* The first value is the text for printing post.
-* The second value is the text for printing page.
-* Default: print_link('', '')
-* Alternatively, you can set the text in 'WP-Admin -> Settings -> Print'.
-* If you DO NOT want the print link to appear in every post/page, DO NOT use the code above. Just type in <strong>[print_link]</strong> into the selected post/page content and it will embed the print link into that post/page only.
-
-
-== Credits ==
-* Plugin icon by [SimpleIcon](http://www.simpleicon.com) from [Flaticon](http://www.flaticon.com)
-* Icons courtesy of [FamFamFam](http://www.famfamfam.com/)
-
-
-== Screenshots ==
-
-1. Admin Print Options
-2. Print Post Link
-3. Print Page
+add parameter ?print=1 to url to view print optimized view of the page
+or add parameter ?pdfout=1 for pdf newspaper download (e-paper 20 posts)
+or add ?pdfout=2&print=1 to download a pdf version of selected posts
 
 == Frequently Asked Questions ==
-
-== How do I add this to my theme? ==
-
-1. Open `wp-content/themes/<YOUR THEME NAME>/index.php`
-      You may place it in single.php, post.php, page.php, etc also.
-1. Find: `<?php while (have_posts()) : the_post(); ?>`
-1. Add Anywhere Below It: `<?php if(function_exists('wp_print')) { print_link(); } ?>`
-
-Simply add this code inside the loop ### where you want the print link to display:
-<code>
-if(function_exists('wp_print')) {
-	print_link();
-}
-</code>
 
 ### If you do not want to print a portion of your post's content
 <code>
@@ -71,6 +38,12 @@ if(function_exists('wp_print')) {
 * This will allow you to upgrade WP-Print without worrying about overwriting your printing styles or templates that you have created.
 
 == Changelog ==
+
+### 9.2.58.1.8 and 9.2.58.1.9
+removed deprecated functions, removed shortcode and functions to display icon/text.
+removed images in image folder
+once started the functions can just be called by adding url paramaters to start page or current page
+php 8 testing
 
 ### 9.2.58.1.6 and 9.2.58.1.7
 * variable declarations and php 7.4.9 adjusts

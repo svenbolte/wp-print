@@ -1,13 +1,14 @@
 <?php
 /*
 Plugin Name: WP-Print
-Plugin URI: https://lesterchan.net/portfolio/programming/php/
 Description: Show posts and pages in a newspaper Style Print View. A PDF downloadable file of a post may be created
 Author: Lester 'GaMerZ' Chan und PBMod
-Author URI: https://lesterchan.net
+Plugin URI: https://github.com/svenbolte/wp-print
+Author URI: https://github.com/svenbolte/
 Text Domain: wp-print
-Version: 9.2.58.1.8
-Stable tag: 9.2.58.1.8
+Domain Path: /
+Version: 9.2.58.1.9
+Stable tag: 9.2.58.1.9
 Requires at least: 5.1
 Tested up to: 5.7
 Requires PHP: 7.4
@@ -16,7 +17,7 @@ Requires PHP: 7.4
 ### Create Text Domain For Translations
 add_action( 'plugins_loaded', 'print_textdomain' );
 function print_textdomain() {
-	load_plugin_textdomain( 'wp-print' );
+	load_plugin_textdomain( 'wp-print', false, dirname( plugin_basename( __FILE__ ) ) . '/' );
 }
 
 
@@ -25,7 +26,6 @@ add_action('admin_menu', 'print_menu');
 function print_menu() {
 	add_options_page(__('Print', 'wp-print'), __('Print', 'wp-print'), 'manage_options', 'wp-print/print-options.php') ;
 }
-
 
 ### Function: Add htaccess Rewrite Endpoint - this handles all the rules
 add_action( 'init', 'wp_print_endpoint' );
@@ -38,95 +38,6 @@ add_filter('query_vars', 'print_variables');
 function print_variables($public_query_vars) {
 	$public_query_vars[] = 'print';
 	return $public_query_vars;
-}
-
-### Function: Display Print Link
-function print_link($print_post_text = '', $print_page_text = '', $echo = true) {
-	$polyglot_append = '';
-	if (function_exists('polyglot_get_lang')){
-		global $polyglot_settings;
-		$polyglot_append = $polyglot_settings['uri_helpers']['lang_view'].'/'.polyglot_get_lang().'/';
-	}
-	$output = '';
-	$using_permalink = get_option('permalink_structure');
-	$print_options = get_option('print_options');
-	$print_style = intval($print_options['print_style']);
-	if(empty($print_post_text)) {
-		$print_text = stripslashes($print_options['post_text']);
-	} else {
-		$print_text  = $print_post_text;
-	}
-	$print_icon = plugins_url('wp-print/images/'.$print_options['print_icon']);
-	$print_link = get_permalink();
-	$print_html = stripslashes($print_options['print_html']);
-	// Fix For Static Page
-	if ( get_option( 'show_on_front' ) === 'page' && is_page() ) {
-		if ( (int) get_option( 'page_on_front' ) > 0 ) {
-			$print_link = _get_page_link();
-		}
-	}
-	if(!empty($using_permalink)) {
-		if(substr($print_link, -1, 1) != '/') {
-			$print_link = $print_link.'/';
-		}
-		if(is_page()) {
-			if(empty($print_page_text)) {
-				$print_text = stripslashes($print_options['page_text']);
-			} else {
-				$print_text = $print_page_text;
-			}
-		}
-		$print_link = $print_link.'print/'.$polyglot_append;
-	} else {
-		if(is_page()) {
-			if(empty($print_page_text)) {
-				$print_text = stripslashes($print_options['page_text']);
-			} else {
-				$print_text = $print_page_text;
-			}
-		}
-		$print_link = $print_link.'&amp;print=1';
-	}
-	unset($print_options);
-	switch($print_style) {
-		// Icon + Text Link
-		case 1:
-			$output = '<a href="'.$print_link.'" title="'.$print_text.'" rel="nofollow"><img class="WP-PrintIcon" src="'.$print_icon.'" alt="'.$print_text.'" title="'.$print_text.'" style="border: 0px;" /></a>&nbsp;<a href="'.$print_link.'" title="'.$print_text.'" rel="nofollow">'.$print_text.'</a>';
-			break;
-		// Icon Only
-		case 2:
-			$output = '<a href="'.$print_link.'" title="'.$print_text.'" rel="nofollow"><img class="WP-PrintIcon" src="'.$print_icon.'" alt="'.$print_text.'" title="'.$print_text.'" style="border: 0px;" /></a>';
-			break;
-		// Text Link Only
-		case 3:
-			$output = '<a href="'.$print_link.'" title="'.$print_text.'" rel="nofollow">'.$print_text.'</a>';
-			break;
-		case 4:
-			$print_html = str_replace("%PRINT_URL%", $print_link, $print_html);
-			$print_html = str_replace("%PRINT_TEXT%", $print_text, $print_html);
-			$print_html = str_replace("%PRINT_ICON_URL%", $print_icon, $print_html);
-			$output = $print_html;
-			break;
-	}
-	if($echo) {
-		echo $output."\n";
-	} else {
-		return $output;
-	}
-}
-
-
-### Function: Short Code For Inserting Prink Links Into Posts/Pages
-add_shortcode('print_link', 'print_link_shortcode');
-function print_link_shortcode($atts) {
-	if(!is_feed()) {
-		return print_link('', '', false);
-	} else {
-		return __('Note: There is a print link embedded within this post, please visit this post to print it.', 'wp-print');
-	}
-}
-function print_link_shortcode2($atts) {
-	return;
 }
 
 
@@ -216,7 +127,6 @@ function print_content($display = true) {
 	}
 }
 
-
 ### Function: Print Categories
 function print_categories($before = '', $after = '') {
 	$temp_cat = strip_tags(get_the_category_list(','));
@@ -224,7 +134,6 @@ function print_categories($before = '', $after = '') {
 	$temp_cat = implode($after.__(',', 'wp-print').' '.$before, $temp_cat);
 	echo $before.$temp_cat.$after;
 }
-
 
 ### Function: Print Comments Content
 function print_comments_content($display = true) {
@@ -280,7 +189,6 @@ function print_comments_content($display = true) {
 	}
 }
 
-
 ### Function: Print Comments
 function print_comments_number() {
 	global $post;
@@ -302,7 +210,6 @@ function print_comments_number() {
 	}
 }
 
-
 ### Function: Print Links
 function print_links($text_links = '') {
 	global $links_text;
@@ -314,7 +221,6 @@ function print_links($text_links = '') {
 	}
 }
 
-
 ### Function: Load WP-Print
 add_action('template_redirect', 'wp_print', 5);
 function wp_print() {
@@ -324,7 +230,6 @@ function wp_print() {
 		exit();
 	}
 }
-
 
 ### Function: Add Print Comments Template
 function print_template_comments() {
@@ -336,13 +241,11 @@ function print_template_comments() {
 	return $file;
 }
 
-
 ### Function: Print Page Title
 function print_pagetitle($page_title) {
 	$page_title .= ' &raquo; '.__('Print', 'wp-print');
 	return $page_title;
 }
-
 
 ### Function: Can Print?
 function print_can($type) {
@@ -354,13 +257,11 @@ function print_can($type) {
 	return 0;
 }
 
-
 ### Function: Remove Image From Text
 function remove_image($content) {
 	$content= preg_replace('/<img(.+?)src=[\"\'](.+?)[\"\'](.*?)>/', '',$content);
 	return $content;
 }
-
 
 ### Function: Remove Video From Text
 function remove_video( $content ) {
@@ -369,7 +270,6 @@ function remove_video( $content ) {
 	$content= preg_replace( '/<iframe[^>]*?>.*?<\/iframe>/', '',$content );
 	return $content;
 }
-
 
 ### Function: Replace One Time Only
 function str_replace_one($search, $replace, $content){
@@ -381,7 +281,6 @@ function str_replace_one($search, $replace, $content){
 }
 
 ### Function PDF Output newest 10 Posts/Pages
-
 include(plugin_dir_path( __FILE__ ) . 'pdfhelper.php');
 $pdf = new PDF_HTML();
 
@@ -423,8 +322,8 @@ function output_pdf() {
             $pdf->SetFont( 'Arial', '', 10 );
 			// Datum und Kategorie
             $pdf->Ln(8);
-            $categorie = get_categories();
-            $pdf->WriteHTML(' Kategorie: ' . $categorie[0]->cat_name);
+            $categorie = get_the_category($post); 
+            if (!empty($categorie)) $pdf->WriteHTML('Kategorie: ' . $categorie[0]->cat_name);
 			date_default_timezone_set('Europe/Berlin');
 			$cdate = get_post_time( get_option( 'date_format' ), false, $post, true );
 			$mdate = get_post_modified_time( get_option( 'date_format' ), false, $post, true );
@@ -452,7 +351,6 @@ function output_pdf() {
 					$pdf->Cell( 40, 40, $pdf->InlineImage($imgatt, $pdf->GetX(), $pdf->GetY(), 100), 0, 0, 'L', false );
 				}		
 			}	
-			
             // Post Content
 			$content = '';
 			if(post_password_required($post)) {
@@ -465,7 +363,6 @@ function output_pdf() {
             $pdf->WriteHTML(utf8_decode($content));
         }
     }
-
     $pdf->Output('I','wp-pdf-output.pdf');
     exit;
 }
@@ -479,9 +376,6 @@ function print_activation( $network_wide ) {
 	$option = array(
 		'post_text'   => __('Print This Post', 'wp-print'),
 		'page_text'   => __('Print This Page', 'wp-print'),
-		'print_icon'  => 'print.gif',
-		'print_style' => 1,
-		'print_html'  => '<a href="%PRINT_URL%" rel="nofollow" title="%PRINT_TEXT%">%PRINT_TEXT%</a>',
 		'comments'    => 0,
 		'links'       => 1,
 		'images'      => 1,
@@ -492,7 +386,6 @@ function print_activation( $network_wide ) {
 
 	if ( is_multisite() && $network_wide ) {
 		$ms_sites = function_exists( 'get_sites' ) ? get_sites() : wp_get_sites();
-
 		if( 0 < count( $ms_sites ) ) {
 			foreach ( $ms_sites as $ms_site ) {
 				$blog_id = isset( $ms_site['blog_id'] ) ? $ms_site['blog_id'] : $ms_site->blog_id;
@@ -501,7 +394,6 @@ function print_activation( $network_wide ) {
 				print_activate();
 			}
 		}
-
 		restore_current_blog();
 	} else {
 		add_option( $option_name, $option );
@@ -512,3 +404,4 @@ function print_activation( $network_wide ) {
 function print_activate() {
 	flush_rewrite_rules();
 }
+?>

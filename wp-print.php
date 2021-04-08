@@ -285,7 +285,7 @@ include(plugin_dir_path( __FILE__ ) . 'pdfhelper.php');
 $pdf = new PDF_HTML();
 
 if (isset($_GET['pdfout'])) {
-  $ppc = $_GET['pdfout'];
+  $ppc = sanitize_text_field($_GET['pdfout']);
   if ( $ppc=='1' ) {    output_pdf(); }
 }
 

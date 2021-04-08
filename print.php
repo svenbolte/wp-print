@@ -28,7 +28,7 @@ $print_options = get_option('print_options');
 
 ### PDF-Ausgabe, wenn ?pdfout=2
 if (isset($_GET['pdfout'])) {
-  $ppc = $_GET['pdfout'];
+  $ppc = sanitize_text_field($_GET['pdfout']);
   if ( $ppc=='2' ) {
 	include(plugin_dir_path( __FILE__ ) . 'print-pdf.php');
   }

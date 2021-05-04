@@ -10,16 +10,15 @@ Domain Path: /
 Version: 9.2.58.1.9
 Stable tag: 9.2.58.1.9
 Requires at least: 5.1
-Tested up to: 5.7
+Tested up to: 5.7.1
 Requires PHP: 7.4
 */
 
 ### Create Text Domain For Translations
 add_action( 'plugins_loaded', 'print_textdomain' );
 function print_textdomain() {
-	load_plugin_textdomain( 'wp-print', false, dirname( plugin_basename( __FILE__ ) ) . '/' );
+	load_plugin_textdomain( 'wp-print', false, plugin_basename( dirname( __FILE__ ) ) . '/' );
 }
-
 
 ### Function: Print Option Menu
 add_action('admin_menu', 'print_menu');

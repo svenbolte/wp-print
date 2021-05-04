@@ -4,7 +4,7 @@ Tags: print, printer, wp-print, pdfoutput, pdf-newspaper
 Version: 9.2.58.1.9
 Stable tag: 9.2.58.1.9
 Requires at least: 5.1
-Tested up to: 5.7
+Tested up to: 5.7.1
 Requires PHP: 7.4
 
 Displays a printable version of your WordPress blogs post/page or creates pdf of it or a pdf newpaper of current 20 posts.

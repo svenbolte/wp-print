@@ -144,7 +144,6 @@ global $wp, $post
 				<?php the_permalink(); ?>
 			</strong>
 		</p>
-		
 		<?php if(print_can('links')): ?>
 			<p><?php print_links(); ?></p>
 		<?php endif; ?>

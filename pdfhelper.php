@@ -7,7 +7,7 @@ include(plugin_dir_path( __FILE__ ) . 'fpdf.php');
 //function hex2dec
 //returns an associative array (keys: R,G,B) from
 //a hex html code (e.g. #3FE5AA)
-function hex2dec($color = "#000000"){
+function hex2dec($color = "#000000") {
     $R = substr($color, 1, 2);
     $rouge = hexdec($R);
     $V = substr($color, 3, 2);
@@ -26,7 +26,7 @@ function px2mm($px){
     return $px*25.4/72;
 }
 
-function txtentities($html){
+function txtentities($html) {
     $trans = get_html_translation_table(HTML_ENTITIES);
     $trans = array_flip($trans);
     return strtr($html, $trans);
@@ -43,8 +43,7 @@ protected $fontList;
 protected $issetfont;
 protected $issetcolor;
 
-function __construct($orientation='P', $unit='mm', $format='A4')
-{
+function __construct($orientation='P', $unit='mm', $format='A4') {
     //Call parent constructor
     parent::__construct($orientation,$unit,$format);
     //Initialization
@@ -92,8 +91,7 @@ function __construct($orientation='P', $unit='mm', $format='A4')
   }
   
 // Fusszeile
-  function Footer()
-  {
+  function Footer() {
     $this->AliasNbPages();
 	// Position 1,5 cm von unten
     $this->SetY(-15);
@@ -104,8 +102,7 @@ function __construct($orientation='P', $unit='mm', $format='A4')
   }
 
    // Inline Image
-    function InlineImage($file, $x=null, $y=null, $w=0, $h=0, $type='', $link='')
-    {
+    function InlineImage($file, $x=null, $y=null, $w=0, $h=0, $type='', $link='') {
         // ----- Code from FPDF->Image() -----
         // Put an image on the page
         if($file=='')
@@ -175,8 +172,7 @@ function __construct($orientation='P', $unit='mm', $format='A4')
     }
 
 
-function WriteHTML($html)
-{
+function WriteHTML($html) {
     // HTML parser   <img> images werden rausgefiltert, erscheinen wenn der tag hier drunter rein kommt
 	// Shortcodes werden gefiltert
     $html=strip_tags($html,"<b><u><i><a><p><strong><script><style><em><font><tr><blockquote>");
@@ -217,8 +213,7 @@ function WriteHTML($html)
     }
 }
 
-function OpenTag($tag, $attr)
-{
+function OpenTag($tag, $attr) {
     //Opening tag
     switch($tag){
         case 'STRONG':
@@ -233,7 +228,7 @@ function OpenTag($tag, $attr)
             $this->SetStyle($tag,true);
             break;
         case 'A':
-            $this->HREF=$attr['HREF'];
+            @$this->HREF=$attr['HREF'];
             break;
         case 'IMG':
             if(isset($attr['SRC']) && (isset($attr['WIDTH']) || isset($attr['HEIGHT']))) {
@@ -288,8 +283,7 @@ function CloseTag($tag)
     }
 }
 
-function SetStyle($tag, $enable)
-{
+function SetStyle($tag, $enable) {
     //Modify style and select corresponding font
     $this->$tag+=($enable ? 1 : -1);
     $style='';
@@ -301,8 +295,7 @@ function SetStyle($tag, $enable)
     $this->SetFont('',$style);
 }
 
-function PutLink($URL, $txt)
-{
+function PutLink($URL, $txt) {
     //Put a hyperlink
     $this->SetTextColor(0,0,255);
     $this->SetStyle('U',true);

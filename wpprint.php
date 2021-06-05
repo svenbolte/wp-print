@@ -83,6 +83,7 @@ function print_content($display = true) {
 			$content = remove_video($content);
 		}
 		if(print_can('links')) {
+			$links_text='';
 			preg_match_all('/<a(.+?)href=[\"\'](.+?)[\"\'](.*?)>(.+?)<\/a>/', $content, $matches);
 			for ($i=0; $i < count($matches[0]); $i++) {
 				$link_match = $matches[0][$i];

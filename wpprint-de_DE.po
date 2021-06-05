@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - wpprint - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-06-05 15:07+0000\n"
+"PO-Revision-Date: 2021-06-05 17:39+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,47 +16,47 @@ msgstr ""
 "Language-Team: Deutsch\n"
 "X-Loco-Version: 2.5.2; wp-5.7.2"
 
-#: print-comments.php:22
+#: print-comments.php:20
 #, php-format
 msgid "%s @ %s"
 msgstr "%s @ %s"
 
-#: wpprint.php:203
+#: wpprint.php:200
 #, php-format
 msgid "%s Comment"
 msgid_plural "%s Comments"
 msgstr[0] "%s Kommentar"
 msgstr[1] "%s Kommentare"
 
-#: wpprint.php:134
+#: wpprint.php:133
 msgid ","
 msgstr ","
 
-#: print-comments.php:22
+#: print-comments.php:20
 msgid "By"
 msgstr "von"
 
-#: print-posts.php:82
+#: print-posts.php:80
 msgid "Click here to print."
 msgstr "Hier klicken um zu drucken."
 
-#: print-comments.php:17
+#: print-comments.php:15
 msgid "Close"
 msgstr "Schließen"
 
-#: print-comments.php:22
+#: print-comments.php:20
 msgid "Comment"
 msgstr "Kommentar"
 
-#: wpprint.php:206
+#: wpprint.php:203
 msgid "Comments Disabled"
 msgstr "Kommentare sind deaktiviert"
 
-#: wpprint.php:209
+#: wpprint.php:206
 msgid "Comments Hidden"
 msgstr "Kommentare sind ausgeblendet."
 
-#: wpprint.php:388
+#: wpprint.php:383
 #, php-format
 msgid "Copyright &copy; %s %s. All rights reserved."
 msgstr "Copyright &copy; %s %s. Alle Rechte vorbehalten. "
@@ -77,7 +77,7 @@ msgstr "https://github.com/svenbolte/"
 msgid "https://github.com/svenbolte/wpprint"
 msgstr "https://github.com/svenbolte/wpprint"
 
-#: wpprint.php:114 wpprint.php:179
+#: wpprint.php:114 wpprint.php:177
 msgid "Image"
 msgstr "Bild"
 
@@ -90,11 +90,11 @@ msgstr "Lester 'GaMerZ' Chan und PBMod"
 msgid "No"
 msgstr "Nein"
 
-#: wpprint.php:201
+#: wpprint.php:198
 msgid "No Comments"
 msgstr "Keine Kommentare"
 
-#: print-posts.php:163
+#: print-posts.php:161
 msgid "No posts matched your criteria."
 msgstr "Keine passenden Beiträge gefunden. "
 
@@ -102,23 +102,23 @@ msgstr "Keine passenden Beiträge gefunden. "
 msgid "No Print Option Updated"
 msgstr "Es wurden keine Druckeinstellungen geändert. "
 
-#: print-comments.php:22 print-posts.php:100
+#: print-comments.php:20 print-posts.php:98
 msgid "On"
 msgstr "am"
 
-#: print-comments.php:17
+#: print-comments.php:15
 msgid "Open"
 msgstr "Öffnen"
 
-#: print-comments.php:22
+#: print-comments.php:20
 msgid "Pingback"
 msgstr "Pingback"
 
-#: print-posts.php:98
+#: print-posts.php:96
 msgid "Posted By"
 msgstr "geschrieben von"
 
-#: wpprint.php:26 wpprint.php:250
+#: wpprint.php:26 wpprint.php:245
 msgid "Print"
 msgstr "Drucken"
 
@@ -138,11 +138,11 @@ msgstr "Links ausdrucken?"
 msgid "Print Options"
 msgstr "Druckeinstellungen"
 
-#: wpprint.php:382
+#: wpprint.php:377
 msgid "Print This Page"
 msgstr "Drucke diese Seite"
 
-#: wpprint.php:381
+#: wpprint.php:376
 msgid "Print This Post"
 msgstr "Drucke diesen Beitrag"
 
@@ -166,11 +166,11 @@ msgstr ""
 "Beiträge und Seiten in einer Zeitungsansicht anzeigen. Eine PDF-Datei zum "
 "Herunterladen eines Beitrags kann erstellt werden"
 
-#: print-comments.php:19
+#: print-comments.php:17
 msgid "To"
 msgstr "Empfänger"
 
-#: print-comments.php:22
+#: print-comments.php:20
 msgid "Trackback"
 msgstr "Trackback"
 
@@ -178,23 +178,24 @@ msgstr "Trackback"
 msgid "Updated"
 msgstr "aktualisiert"
 
-#: print-posts.php:144
+#: print-posts.php:142
 msgid "URL to article"
 msgstr "URL zum Beitrag"
 
-#: wpprint.php:220
+#: wpprint.php:216
 msgid "URLs in this post:"
 msgstr "URLs in diesem Beitrag:"
 
 #. Name of the plugin
-msgid "wpprint"
-msgstr "wpprint"
+#| msgid "wpprint"
+msgid "WP Print"
+msgstr "WP Print"
 
 #: print-options.php:50 print-options.php:59 print-options.php:68
 #: print-options.php:77 print-options.php:86
 msgid "Yes"
 msgstr "Ja"
 
-#: print-comments.php:26
+#: print-comments.php:24
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Freischaltung."

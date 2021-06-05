@@ -1,9 +1,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: WP-Print\n"
+"Project-Id-Version: wpprint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-25 20:52+0000\n"
+"POT-Creation-Date: 2021-06-05 15:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,47 +15,47 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.4.0; wp-5.4.2"
 
-#: print-comments.php:22
+#: print-comments.php:20
 #, php-format
 msgid "%s @ %s"
 msgstr ""
 
-#: wp-print.php:203
+#: wpprint.php:200
 #, php-format
 msgid "%s Comment"
 msgid_plural "%s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: wp-print.php:134
+#: wpprint.php:133
 msgid ","
 msgstr ""
 
-#: print-comments.php:22
+#: print-comments.php:20
 msgid "By"
 msgstr ""
 
-#: print-posts.php:82
+#: print-posts.php:80
 msgid "Click here to print."
 msgstr ""
 
-#: print-comments.php:17
+#: print-comments.php:15
 msgid "Close"
 msgstr ""
 
-#: print-comments.php:22
+#: print-comments.php:20
 msgid "Comment"
 msgstr ""
 
-#: wp-print.php:206
+#: wpprint.php:203
 msgid "Comments Disabled"
 msgstr ""
 
-#: wp-print.php:209
+#: wpprint.php:206
 msgid "Comments Hidden"
 msgstr ""
 
-#: wp-print.php:388
+#: wpprint.php:383
 #, php-format
 msgid "Copyright &copy; %s %s. All rights reserved."
 msgstr ""
@@ -73,10 +73,10 @@ msgid "https://github.com/svenbolte/"
 msgstr ""
 
 #. URI of the plugin
-msgid "https://github.com/svenbolte/wp-print"
+msgid "https://github.com/svenbolte/wpprint"
 msgstr ""
 
-#: wp-print.php:114 wp-print.php:179
+#: wpprint.php:114 wpprint.php:177
 msgid "Image"
 msgstr ""
 
@@ -89,11 +89,11 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: wp-print.php:201
+#: wpprint.php:198
 msgid "No Comments"
 msgstr ""
 
-#: print-posts.php:163
+#: print-posts.php:161
 msgid "No posts matched your criteria."
 msgstr ""
 
@@ -101,23 +101,23 @@ msgstr ""
 msgid "No Print Option Updated"
 msgstr ""
 
-#: print-comments.php:22 print-posts.php:100
+#: print-comments.php:20 print-posts.php:98
 msgid "On"
 msgstr ""
 
-#: print-comments.php:17
+#: print-comments.php:15
 msgid "Open"
 msgstr ""
 
-#: print-comments.php:22
+#: print-comments.php:20
 msgid "Pingback"
 msgstr ""
 
-#: print-posts.php:98
+#: print-posts.php:96
 msgid "Posted By"
 msgstr ""
 
-#: wp-print.php:26 wp-print.php:250
+#: wpprint.php:26 wpprint.php:245
 msgid "Print"
 msgstr ""
 
@@ -137,11 +137,11 @@ msgstr ""
 msgid "Print Options"
 msgstr ""
 
-#: wp-print.php:382
+#: wpprint.php:377
 msgid "Print This Page"
 msgstr ""
 
-#: wp-print.php:381
+#: wpprint.php:376
 msgid "Print This Post"
 msgstr ""
 
@@ -163,11 +163,11 @@ msgid ""
 "file of a post may be created"
 msgstr ""
 
-#: print-comments.php:19
+#: print-comments.php:17
 msgid "To"
 msgstr ""
 
-#: print-comments.php:22
+#: print-comments.php:20
 msgid "Trackback"
 msgstr ""
 
@@ -175,16 +175,16 @@ msgstr ""
 msgid "Updated"
 msgstr ""
 
-#: print-posts.php:144
+#: print-posts.php:142
 msgid "URL to article"
 msgstr ""
 
-#: wp-print.php:220
+#: wpprint.php:216
 msgid "URLs in this post:"
 msgstr ""
 
 #. Name of the plugin
-msgid "WP-Print"
+msgid "WP Print"
 msgstr ""
 
 #: print-options.php:50 print-options.php:59 print-options.php:68
@@ -192,6 +192,6 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: print-comments.php:26
+#: print-comments.php:24
 msgid "Your comment is awaiting moderation."
 msgstr ""

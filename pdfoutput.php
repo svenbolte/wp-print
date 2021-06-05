@@ -6,7 +6,7 @@ if (isset($_GET['pdfout'])) {
 }
 
 function output_pdf() {
-	include(WP_PLUGIN_DIR.'/wp-print/pdfhelper.php');
+	include(WP_PLUGIN_DIR.'/wpprint/pdfhelper.php');
 	$pdf = new PDF_HTML();
     $posts = get_posts( 'posts_per_page=5' );
 

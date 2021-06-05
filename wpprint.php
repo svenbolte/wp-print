@@ -1,29 +1,29 @@
 <?php
 /*
-Plugin Name: WP-Print
+Plugin Name: WP Print
 Description: Show posts and pages in a newspaper Style Print View. A PDF downloadable file of a post may be created
 Author: Lester 'GaMerZ' Chan und PBMod
-Plugin URI: https://github.com/svenbolte/wp-print
+Plugin URI: https://github.com/svenbolte/wpprint
 Author URI: https://github.com/svenbolte/
-Text Domain: wp-print
+Text Domain: wpprint
 Domain Path: /
-Version: 9.2.58.1.9
-Stable tag: 9.2.58.1.9
+Version: 9.2.58.1.10
+Stable tag: 9.2.58.1.10
 Requires at least: 5.1
-Tested up to: 5.7.1
+Tested up to: 5.7.2
 Requires PHP: 7.4
 */
 
 ### Create Text Domain For Translations
 add_action( 'plugins_loaded', 'print_textdomain' );
 function print_textdomain() {
-	load_plugin_textdomain( 'wp-print', false, plugin_basename( dirname( __FILE__ ) ) . '/' );
+	load_plugin_textdomain( 'wpprint', false, plugin_basename( dirname( __FILE__ ) ) . '/' );
 }
 
 ### Function: Print Option Menu
 add_action('admin_menu', 'print_menu');
 function print_menu() {
-	add_options_page(__('Print', 'wp-print'), __('Print', 'wp-print'), 'manage_options', 'wp-print/print-options.php') ;
+	add_options_page(__('Print', 'wpprint'), __('Print', 'wpprint'), 'manage_options', 'wpprint/print-options.php') ;
 }
 
 ### Function: Add htaccess Rewrite Endpoint - this handles all the rules
@@ -111,7 +111,7 @@ function print_content($display = true) {
 				$content = str_replace_one($link_match, "<a href=\"$link_url\" rel=\"external\">".$link_text.'</a> <sup>['.number_format_i18n($link_number).']</sup>', $content);
 				if ($new_link) {
 					if(preg_match('/<img(.+?)src=[\"\'](.+?)[\"\'](.*?)>/',$link_text)) {
-						$links_text .= '<p style="margin: 2px 0;">['.number_format_i18n($link_number).'] '.__('Image', 'wp-print').': <b><span dir="ltr">'.$link_url.'</span></b></p>';
+						$links_text .= '<p style="margin: 2px 0;">['.number_format_i18n($link_number).'] '.__('Image', 'wpprint').': <b><span dir="ltr">'.$link_url.'</span></b></p>';
 					} else {
 						$links_text .= '<p style="margin: 2px 0;">['.number_format_i18n($link_number).'] '.$link_text.': <b><span dir="ltr">'.$link_url.'</span></b></p>';
 					}
@@ -130,7 +130,7 @@ function print_content($display = true) {
 function print_categories($before = '', $after = '') {
 	$temp_cat = strip_tags(get_the_category_list(','));
 	$temp_cat = explode(', ', $temp_cat);
-	$temp_cat = implode($after.__(',', 'wp-print').' '.$before, $temp_cat);
+	$temp_cat = implode($after.__(',', 'wpprint').' '.$before, $temp_cat);
 	echo $before.$temp_cat.$after;
 }
 
@@ -174,7 +174,7 @@ function print_comments_content($display = true) {
 			$content = str_replace_one($link_match, "<a href=\"$link_url\" rel=\"external\">".$link_text.'</a> <sup>['.number_format_i18n($link_number).']</sup>', $content);
 			if ($new_link) {
 				if(preg_match('/<img(.+?)src=[\"\'](.+?)[\"\'](.*?)>/',$link_text)) {
-					$links_text .= '<p style="margin: 2px 0;">['.number_format_i18n($link_number).'] '.__('Image', 'wp-print').': <b><span dir="ltr">'.$link_url.'</span></b></p>';
+					$links_text .= '<p style="margin: 2px 0;">['.number_format_i18n($link_number).'] '.__('Image', 'wpprint').': <b><span dir="ltr">'.$link_url.'</span></b></p>';
 				} else {
 					$links_text .= '<p style="margin: 2px 0;">['.number_format_i18n($link_number).'] '.$link_text.': <b><span dir="ltr">'.$link_url.'</span></b></p>';
 				}
@@ -195,15 +195,15 @@ function print_comments_number() {
 	if($comment_status == 'open') {
 		$num_comments = get_comments_number();
 		if($num_comments == 0) {
-			$comment_text = __('No Comments', 'wp-print');
+			$comment_text = __('No Comments', 'wpprint');
 		} else {
-			$comment_text = sprintf(_n('%s Comment', '%s Comments', $num_comments, 'wp-print'), number_format_i18n($num_comments));
+			$comment_text = sprintf(_n('%s Comment', '%s Comments', $num_comments, 'wpprint'), number_format_i18n($num_comments));
 		}
 	} else {
-		$comment_text = __('Comments Disabled', 'wp-print');
+		$comment_text = __('Comments Disabled', 'wpprint');
 	}
 	if(post_password_required()) {
-		_e('Comments Hidden', 'wp-print');
+		_e('Comments Hidden', 'wpprint');
 	} else {
 		echo $comment_text;
 	}
@@ -213,19 +213,19 @@ function print_comments_number() {
 function print_links($text_links = '') {
 	global $links_text;
 	if(empty($text_links)) {
-		$text_links = __('URLs in this post:', 'wp-print');
+		$text_links = __('URLs in this post:', 'wpprint');
 	}
 	if(!empty($links_text)) {
 		echo $text_links.$links_text;
 	}
 }
 
-### Function: Load WP-Print
+### Function: Load wpprint
 add_action('template_redirect', 'wp_print', 5);
 function wp_print() {
 	global $wp_query;
 	if( array_key_exists( 'print' , $wp_query->query_vars ) ) {
-		include(WP_PLUGIN_DIR.'/wp-print/print.php');
+		include(WP_PLUGIN_DIR.'/wpprint/print.php');
 		exit();
 	}
 }
@@ -235,14 +235,14 @@ function print_template_comments() {
 	if(file_exists(get_stylesheet_directory().'/print-comments.php')) {
 		$file = get_stylesheet_directory().'/print-comments.php';
 	} else {
-		$file = WP_PLUGIN_DIR.'/wp-print/print-comments.php';
+		$file = WP_PLUGIN_DIR.'/wpprint/print-comments.php';
 	}
 	return $file;
 }
 
 ### Function: Print Page Title
 function print_pagetitle($page_title) {
-	$page_title .= ' &raquo; '.__('Print', 'wp-print');
+	$page_title .= ' &raquo; '.__('Print', 'wpprint');
 	return $page_title;
 }
 
@@ -373,14 +373,14 @@ function print_activation( $network_wide ) {
 	// Add Options
 	$option_name = 'print_options';
 	$option = array(
-		'post_text'   => __('Print This Post', 'wp-print'),
-		'page_text'   => __('Print This Page', 'wp-print'),
+		'post_text'   => __('Print This Post', 'wpprint'),
+		'page_text'   => __('Print This Page', 'wpprint'),
 		'comments'    => 0,
 		'links'       => 1,
 		'images'      => 1,
 		'thumbnail'   => 0,
 		'videos'      => 0,
-		'disclaimer'  => sprintf(__('Copyright &copy; %s %s. All rights reserved.', 'wp-print'), date('Y'), get_option('blogname'))
+		'disclaimer'  => sprintf(__('Copyright &copy; %s %s. All rights reserved.', 'wpprint'), date('Y'), get_option('blogname'))
 	);
 
 	if ( is_multisite() && $network_wide ) {

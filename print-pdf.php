@@ -1,9 +1,9 @@
 <?php
 /*
- * WordPress Plugin: WP-Print
+ * WordPress Plugin: wpprint
  *
  * - Printer Friendly Post/Page Template for PDF Output
- * - wp-content/plugins/wp-print/print-pdf.php
+ * - wp-content/plugins/wpprint/print-pdf.php
  */
 
 output_pdf2();

@@ -1,10 +1,10 @@
-=== WP-Print ===
+=== wpprint ===
 Contributors: GamerZ, PBMod 
-Tags: print, printer, wp-print, pdfoutput, pdf-newspaper  
-Version: 9.2.58.1.9
-Stable tag: 9.2.58.1.9
+Tags: print, printer, wpprint, pdfoutput, pdf-newspaper  
+Version: 9.2.58.1.10
+Stable tag: 9.2.58.1.10
 Requires at least: 5.1
-Tested up to: 5.7.1
+Tested up to: 5.7.2
 Requires PHP: 7.4
 
 Displays a printable version of your WordPress blogs post/page or creates pdf of it or a pdf newpaper of current 20 posts.
@@ -13,7 +13,7 @@ Displays a printable version of your WordPress blogs post/page or creates pdf of
 
 Once installed take the following steps to set it up:
 
-1. WP-Print settings page is located in WP-Admin -> Settings -> Print
+1. wpprint settings page is located in WP-Admin -> Settings -> Print
 2. You Need To Re-Generate The Permalink (WP-Admin -> Settings -> Permalinks -> Save Changes)
 
 == Usage ==
@@ -33,9 +33,9 @@ or add ?pdfout=2&print=1 to download a pdf version of selected posts
 * Do note that if you are using WP-Email, any text within [donotprint][/donotprint] will not be emailed as well.
 
 ### Custom Template
-* WP-Print will load 'print-css.css', 'print-posts.php' and 'print-comments.php' from your theme's directory if it exists.
-* If it doesn't exists, it will just load the respective default file that comes with WP-Print.
-* This will allow you to upgrade WP-Print without worrying about overwriting your printing styles or templates that you have created.
+* wpprint will load 'print-css.css', 'print-posts.php' and 'print-comments.php' from your theme's directory if it exists.
+* If it doesn't exists, it will just load the respective default file that comes with wpprint.
+* This will allow you to upgrade wpprint without worrying about overwriting your printing styles or templates that you have created.
 
 == Changelog ==
 
@@ -94,7 +94,7 @@ php 8 testing
 
 ### 2.51
 * NEW: Support for links that start with "//"
-* FIXED: Unable to load WP-Print on Password Protected posts
+* FIXED: Unable to load wpprint on Password Protected posts
 
 ### 2.50
 * NEW: Uses jQuery Framework

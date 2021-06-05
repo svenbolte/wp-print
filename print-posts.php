@@ -1,15 +1,13 @@
 <?php
 /*
- * WordPress Plugin: WP-Print
+ * WordPress Plugin: wpprint
  * Copyright (c) 2012 Lester "GaMerZ" Chan MOD PB 2020
  *
  * File Written By:
  * - Lester "GaMerZ" Chan
- * - http://lesterchan.net
- *
  * File Information:
  * - Printer Friendly Post/Page Template
- * - wp-content/plugins/wp-print/print-posts.php
+ * - wp-content/plugins/wpprint/print-posts.php
  */
 
 global $wp, $post
@@ -26,13 +24,13 @@ global $wp, $post
 	<?php elseif(@file_exists(get_template_directory().'/print-css.css')): ?>
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/print-css.css" type="text/css" media="screen, print" />
 	<?php else: ?>
-		<link rel="stylesheet" href="<?php echo plugins_url('wp-print/print-css.css'); ?>" type="text/css" media="screen, print" />
+		<link rel="stylesheet" href="<?php echo plugins_url('wpprint/print-css.css'); ?>" type="text/css" media="screen, print" />
 	<?php endif; ?>
 	<?php if ( is_rtl() ) : ?>
 		<?php if(@file_exists(get_stylesheet_directory().'/print-css-rtl.css')): ?>
 			<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/print-css-rtl.css" type="text/css" media="screen, print" />
 		<?php else: ?>
-			<link rel="stylesheet" href="<?php echo plugins_url('wp-print/print-css-rtl.css'); ?>" type="text/css" media="screen, print" />
+			<link rel="stylesheet" href="<?php echo plugins_url('wpprint/print-css-rtl.css'); ?>" type="text/css" media="screen, print" />
 		<?php endif; ?>
 	<?php endif; ?>
 	<link rel="canonical" href="<?php the_permalink(); ?>" />
@@ -79,7 +77,7 @@ global $wp, $post
 		<?php echo bloginfo( 'description' ) .' &nbsp; ' . stripslashes($print_options['disclaimer']);  ?><br>
 		<span id="print-link">
 			<?php
-			echo '<a href="#Print" onclick="window.print();return false;" title="' . __('Click here to print.', 'wp-print') . '">Drucken</a> &nbsp; ';
+			echo '<a href="#Print" onclick="window.print();return false;" title="' . __('Click here to print.', 'wpprint') . '">Drucken</a> &nbsp; ';
 			echo '<a href="'.add_query_arg( array('pdfout'=>1), home_url($wp->request) ).'" title="Offline PDF-Zeitung">PDF-Offline-Zeitung</a> &nbsp; ';
 			echo '<a href="'.add_query_arg( array('pdfout'=>2,'print'=>1), home_url($wp->request) ).'" title="Ansicht als PDF herunterladen">diese Posts als PDF</a> ';
 			?>
@@ -95,9 +93,9 @@ global $wp, $post
 				<?php the_title(); ?>
 			</h1>
 			<span class="entry-date">
-				<?php _e('Posted By', 'wp-print'); ?> 
+				<?php _e('Posted By', 'wpprint'); ?> 
 				<cite><?php the_author(); ?></cite> 
-				<?php _e('On', 'wp-print'); ?> 
+				<?php _e('On', 'wpprint'); ?> 
 				<?php 
 				// Datum kurz und Langanzeige	
 				$diff = time() - get_post_time( 'U', false, $post, true );
@@ -141,7 +139,7 @@ global $wp, $post
 
 	<div style="border:1px solid #e1e1e1;margin-bottom:25px">
 		<p>
-			<?php _e('URL to article', 'wp-print'); ?>: 
+			<?php _e('URL to article', 'wpprint'); ?>: 
 			<strong dir="ltr">
 				<?php the_permalink(); ?>
 			</strong>
@@ -160,7 +158,7 @@ global $wp, $post
 	<footer class="footer">
 		<?php else: ?>
 			<p>
-				<?php _e('No posts matched your criteria.', 'wp-print'); ?>
+				<?php _e('No posts matched your criteria.', 'wpprint'); ?>
 			</p>
 		<?php endif; ?>
 	</footer>
